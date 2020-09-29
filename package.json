@@ -9,7 +9,6 @@
     "test": "yarn jest"
   },
   "author": "Estevao Bezerra",
-  "license": "GPL",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "dotenv-safe": "^8.2.0",

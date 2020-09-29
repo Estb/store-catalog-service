@@ -3,7 +3,6 @@ const passport    = require('passport');
 const ExtractJWT =  require("passport-jwt").ExtractJwt;
 const JWTstrategy = require('passport-jwt').Strategy;
 
-console.log(process.env.SECRET)
 passport.use(
   new JWTstrategy(
     {
