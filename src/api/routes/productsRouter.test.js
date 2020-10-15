@@ -1,6 +1,6 @@
 const supertest = require("supertest");
-const utils = require("../utils/testutils");
-const mongoDb = require("../config/mongodb")
+const utils = require("../../utils/testutils");
+const mongoDb = require("../../config/mongodb")
 require('dotenv-safe').config();
 
 var app = null;

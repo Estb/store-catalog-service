@@ -2,7 +2,7 @@ const middleware = require("../../middleware");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 
-module.exports = (app, controllers, httpResponseHelper, inputHelper, repository) => {
+module.exports = (app, controllers, httpResponseHelper, repository) => {
   const rh = httpResponseHelper
   const inputNewHelper = middleware.inputHelper.newProduct;
   const inputEditHelper = middleware.inputHelper.editProduct;
@@ -23,7 +23,7 @@ module.exports = (app, controllers, httpResponseHelper, inputHelper, repository)
       });
   });
 
-  //Cliente Get one product by product ID or By SKU
+  //Client Get one product by product ID or By SKU
   app.get("/products/view/:product", (req, res, next) => {
     const { product } = req.params;
     controllers

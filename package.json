@@ -4,7 +4,7 @@
   "description": "Provide store catalog.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index",
+    "dev": "yarn nodemon src/index",
     "start": "node src/index",
     "test": "yarn jest"
   },
@@ -19,6 +19,7 @@
     "mongodb": "^3.1.0-beta4",
     "mongoose": "^5.10.6",
     "morgan": "^1.9.0",
+    "nodemon": "^2.0.5",
     "passport": "^0.4.1",
     "passport-http-bearer": "^1.0.1",
     "passport-jwt": "^4.0.0",

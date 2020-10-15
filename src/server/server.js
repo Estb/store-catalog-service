@@ -28,7 +28,7 @@ function start(
     res.status(500).send("Something went wrong!");
   });
 
-  router(app, controllers, httpResponseHelper, middleware, repository);
+  router(app, controllers, httpResponseHelper, repository);
 
   // callback(true)
   server = app.listen(parseInt(process.env.PORT), () => callback(null, server));

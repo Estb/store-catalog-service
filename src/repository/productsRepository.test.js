@@ -25,18 +25,6 @@ describe("Test Repository", () => {
     done()
   });
 
-  it("Find by findByIdorSku", async (done) => {
-    let item = await repository().findByIdorSku(productId);
-    expect(item).toHaveProperty("_id");
-    done()
-  });
-
-  it("View item by viewByIdorSku", async (done) => {
-    let item = await repository().viewByIdorSku(productId);
-    expect(item[0]).toHaveProperty("name");
-    done()
-  });
-
   it("Find All Itens", async (done) => {
     let item = await repository().findAll();
     expect(item[0]).toHaveProperty("name");
@@ -55,6 +43,12 @@ describe("Test Repository", () => {
       apiMock.edit(true)
     );
     expect(item).toMatchObject({ status: 200 });
+    done()
+  });
+
+  it("Find by findByIdorSku", async (done) => {
+    let item = await repository().findByIdorSku(productId);
+    expect(item).toHaveProperty("_id");
     done()
   });
 
