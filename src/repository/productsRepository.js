@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 
 module.exports = () => {
   return {
-    search: async (search, skip, limit) => {
+    search: (search, skip, limit) => {
       return new Promise((resolve, reject) => {
-        model
+      model
           .find()
           .and(search)
           .skip(skip)
@@ -34,8 +34,8 @@ module.exports = () => {
           });
       });
     },
-    findByIdorSku: async (product) => {
-      return new Promise(async (resolve, reject) => {
+    findByIdorSku: (product) => {
+      return new Promise((resolve, reject) => {
         let item = model
           .findOne({ sku: product })
           .then((s) => {
@@ -64,8 +64,8 @@ module.exports = () => {
           });
       });
     },
-    viewByIdorSku: async (product) => {
-      return new Promise(async (resolve, reject) => {
+    viewByIdorSku: (product) => {
+      return new Promise((resolve, reject) => {
         let item = model
           .find({ sku: product })
           .and({ active: "true" })
@@ -95,9 +95,9 @@ module.exports = () => {
           });
       });
     },
-    findAll: async (skip, limit) => {
+    findAll: (skip, limit) => {
       return new Promise((resolve, reject) => {
-        model
+       model
           .find()
           .skip(skip)
           .limit(limit)
@@ -130,7 +130,7 @@ module.exports = () => {
           "[ProductsDAO] Creating a new product",
           JSON.stringify(product)
         );
-        model
+       model
           .create(product)
           .then((prod) => {
             logger.info(
@@ -192,7 +192,7 @@ module.exports = () => {
     delete: (id) => {
       return new Promise((resolve, reject) => {
         if (mongoose.Types.ObjectId.isValid(id)) {
-          model
+         model
             .findByIdAndRemove(id)
             .then((res) => {
               if (res) {

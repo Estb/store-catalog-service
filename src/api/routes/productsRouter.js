@@ -1,8 +1,7 @@
-const middleware = require("../../middleware");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 
-module.exports = (app, controllers, httpResponseHelper, repository) => {
+module.exports = (app, controllers, httpResponseHelper, middleware, repository) => {
   const rh = httpResponseHelper
   const inputNewHelper = middleware.inputHelper.newProduct;
   const inputEditHelper = middleware.inputHelper.editProduct;
